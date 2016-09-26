@@ -1,0 +1,5 @@
+.schachtelGrid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  flex: 1 !important;
+}

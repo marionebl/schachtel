@@ -1,0 +1,98 @@
+{
+  "name": "schachtel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "babel": "babel src --out-dir lib",
+    "build": "node ./scripts/build",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "docs": "rm -rf docs/api && mkdir docs/api && jsdoc -c jsdoc.json",
+    "lint": "eslint src scripts demo",
+    "prebuild": "npm run babel",
+    "precommit": "npm test",
+    "prepush": "npm test",
+    "prerelease": "npm run transpile; npm test",
+    "pretest": "NODE_ENV=test",
+    "posttest": "npm run lint",
+    "release": "standard-version --no-verify",
+    "server": "cd docs && http-server",
+    "start": "npm run build && npm run server",
+    "test": "babel-node ./node_modules/istanbul/lib/cli.js cover _mocha -- ./src/**/spec/*.js",
+    "watch": "BABEL_ENV=development node ./scripts/watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelass/schachtel.git"
+  },
+  "keywords": [],
+  "author": "Gregor Adams <greg@pixelass.com> (http://pixelass.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixelass/schachtel/issues"
+  },
+  "homepage": "https://github.com/pixelass/schachtel#readme",
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-plugin-css-modules-transform": "^1.1.0",
+    "babel-plugin-istanbul": "^2.0.1",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "coveralls": "^2.11.14",
+    "css-modulesify": "^0.25.1",
+    "cz-conventional-changelog": "^1.2.0",
+    "errorify": "^0.3.1",
+    "eslint": "^3.5.0",
+    "eslint-config-standard": "^6.0.1",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-react": "^6.3.0",
+    "eslint-plugin-standard": "^2.0.0",
+    "hopsdoc": "^0.1.7",
+    "http-server": "^0.9.0",
+    "husky": "^0.11.8",
+    "jest": "^15.1.1",
+    "jsdoc": "^3.4.1",
+    "livereactload": "^3.0.0",
+    "log": "^1.4.0",
+    "mocha": "^3.0.2",
+    "nyc": "^8.3.0",
+    "postcss-cssnext": "^2.8.0",
+    "standard-version": "^2.4.0",
+    "watchify": "^3.7.0"
+  },
+  "browserify": {
+    "transform": [
+      "babelify",
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "react",
+            "stage-0"
+          ]
+        }
+      ]
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
+}
