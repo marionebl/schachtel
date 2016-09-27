@@ -5,24 +5,40 @@ body {
 
 
 .grid {
-  box-shadow: 0 0 0 0.5px;
-  background-clip: content-box;
-  background-color: rgba(255,0,0,0.1);
+  box-shadow: 0 0 0 1px inset;
+  background-color: #ccc;
   max-width: 960px;
   margin: auto;
 }
 
+@media (max-width: 1041px) {
+  .grid {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 961px) {
+  .grid {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 641px) {
+  .grid {
+    max-width: 400px;
+  }
+}
+
 .row {
-  box-shadow: 0 0 0 0.5px;
-  background-clip: content-box;
-  background-color: rgba(0,255,0,0.1);
+  box-shadow: 0 0 0 1px inset;
+  background-color: #aaa;
 }
 
 .column {
-  min-height: 50px;
-  box-shadow: 0 0 0 0.5px;
+  min-height: 100px;
+  box-shadow: 0 0 0 1px inset;
   background-clip: content-box;
-  background-color: rgba(0,0,255,0.1);
+  background-color: #eee;
 }
 
 h4 {

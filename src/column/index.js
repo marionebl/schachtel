@@ -96,6 +96,7 @@ Column.contextTypes = {
   handheldCols: PropTypes.number,
   tabletCols: PropTypes.number,
   desktopCols: PropTypes.number,
+  fullCols: PropTypes.number,
   baseSize: PropTypes.number
 }
 

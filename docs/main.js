@@ -16,35 +16,18 @@ var _style = require('./style.css');
 var _style2 = _interopRequireDefault(_style);
 
 function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : { default: obj };
+  return obj && obj.__esModule ? obj : { default: obj };
 }
 
 var app = document.getElementById('app'); // eslint-disable-line no-unused-vars
 
 
 var App = function App() {
-        return _react2.default.createElement('div', null, _react2.default.createElement(_src.Grid, { className: _style2.default.grid }, _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 2,
-                tablet: 6 }, _react2.default.createElement(_src.Row, { className: _style2.default.row }, _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 2,
-                tablet: 3 }, _react2.default.createElement(_src.Row, null, _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 2,
-                tablet: 3 }, ' 2:3 '), _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 1,
-                tablet: 2 }, ' 1:2 '), _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 1 }, ' 1 '))), _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 1,
-                tablet: 2 }, ' 1:2 '), _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 1 }, ' 1 '), _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 2, tablet: 6 }, ' 1 '))), _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 2,
-                tablet: 2,
-                desktop: 6 }, _react2.default.createElement(_src.Row, null, _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 2,
-                desktop: 3 }, ' 2:2:3 '), _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 1,
-                desktop: 2 }, ' 1:1:2 '), _react2.default.createElement(_src.Column, { className: _style2.default.column,
-                handheld: 1 }, ' 1 ')))));
+  return _react2.default.createElement('div', null, _react2.default.createElement(_src.Grid, { className: _style2.default.grid, gutter: 8 }, _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column,
+    tablet: 2 }), _react2.default.createElement(_src.Column, { className: _style2.default.column,
+    tablet: 2 }), _react2.default.createElement(_src.Column, { className: _style2.default.column,
+    handheld: 2, desktop: 6, full: 8 }), _react2.default.createElement(_src.Column, { className: _style2.default.column,
+    handheld: 4, tablet: 2, desktop: 6, full: 4 }, _react2.default.createElement(_src.Row, { className: _style2.default.row }, _react2.default.createElement(_src.Column, { handheld: 2, className: _style2.default.column }, _react2.default.createElement(_src.Row, { className: _style2.default.row }, _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { handheld: 2, className: _style2.default.column }), _react2.default.createElement(_src.Column, { handheld: 2, className: _style2.default.column }))), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column }), _react2.default.createElement(_src.Column, { className: _style2.default.column, desktop: 3, full: 1 }), _react2.default.createElement(_src.Column, { className: _style2.default.column, desktop: 3, full: 1 })))));
 };
 
 (0, _reactDom.render)(_react2.default.createElement(App, null), app);
@@ -21020,6 +21003,7 @@ Column.contextTypes = {
   handheldCols: _react.PropTypes.number,
   tabletCols: _react.PropTypes.number,
   desktopCols: _react.PropTypes.number,
+  fullCols: _react.PropTypes.number,
   baseSize: _react.PropTypes.number
 };
 
