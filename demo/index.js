@@ -6,8 +6,8 @@ import styles from './style.css'
 
 const App = () => (
   <div>
-    <Grid className={styles.grid} gutter={8}>
-      <Column className={styles.column}></Column>
+    <Grid className={styles.grid}>
+      <Column className={styles.column} el='section' handheld={12}></Column>
       <Column className={styles.column}></Column>
       <Column className={styles.column}></Column>
       <Column className={styles.column}></Column>
@@ -26,18 +26,18 @@ const App = () => (
         <Row className={styles.row}>
           <Column handheld={2} className={styles.column}>
             <Row className={styles.row}>
-              <Column className={styles.column}></Column>
-              <Column className={styles.column}></Column>
-              <Column handheld={2} className={styles.column}></Column>
-              <Column handheld={2} className={styles.column}></Column>
+              <Column ></Column>
+              <Column ></Column>
+              <Column handheld={2} ></Column>
+              <Column handheld={2} ></Column>
             </Row>
           </Column>
-          <Column className={styles.column}></Column>
-          <Column className={styles.column}></Column>
-          <Column className={styles.column}></Column>
-          <Column className={styles.column}></Column>
-          <Column className={styles.column} desktop={3} full={1}></Column>
-          <Column className={styles.column} desktop={3} full={1}></Column>
+          <Column handheld={12}>12</Column>
+          <Column>1</Column>
+          <Column>1</Column>
+          <Column>1</Column>
+          <Column desktop={3} full={1}>1:1:3:1</Column>
+          <Column desktop={3} full={1}>1:1:3:1</Column>
         </Row>
       </Column>
     </Grid>

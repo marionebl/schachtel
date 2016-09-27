@@ -11,23 +11,23 @@ body {
   margin: auto;
 }
 
-@media (max-width: 1041px) {
-  .grid {
-    max-width: 960px;
-  }
-}
-
-@media (max-width: 961px) {
-  .grid {
-    max-width: 640px;
-  }
-}
-
-@media (max-width: 641px) {
-  .grid {
-    max-width: 400px;
-  }
-}
+/*@media (max-width: 1041px) {*/
+/*  .grid {*/
+/*    max-width: 960px;*/
+/*  }*/
+/*}*/
+/**/
+/*@media (max-width: 961px) {*/
+/*  .grid {*/
+/*    max-width: 640px;*/
+/*  }*/
+/*}*/
+/**/
+/*@media (max-width: 641px) {*/
+/*  .grid {*/
+/*    max-width: 400px;*/
+/*  }*/
+/*}*/
 
 .row {
   box-shadow: 0 0 0 1px inset;
