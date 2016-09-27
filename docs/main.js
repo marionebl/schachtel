@@ -20904,7 +20904,7 @@ var Column = function (_Component) {
     _this.handleDesktop = _this.handleDesktop.bind(_this);
     _this.handleFull = _this.handleFull.bind(_this);
     _this.state = {
-      columns: 12
+      size: 0
     };
     return _this;
   }
