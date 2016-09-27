@@ -131,4 +131,3 @@ Grid.contextTypes = {
 }
 
 export default Grid
-

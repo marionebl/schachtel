@@ -67,6 +67,7 @@
     "log": "^1.4.0",
     "postcss-cssnext": "^2.8.0",
     "react-addons-test-utils": "^15.3.2",
+    "react-syntax-highlighter": "^2.7.0",
     "sinon": "^1.17.6",
     "standard-version": "^2.4.0",
     "watchify": "^3.7.0"

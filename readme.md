@@ -19,11 +19,16 @@ The shallow grid with ininite depth
 [![GitHub stars](https://img.shields.io/github/stars/pixelass/schachtel.svg)](https://github.com/pixelass/schachtel/stargazers)
 
 
+> When you put "Schachteln" in a "Schachtel" you "schachtel Schachteln"  
+> When you put "boxes" in a "box" you "box boxes"
+
+[English - German translation](http://www.dict.cc/?s=schachteln)
+
 ```shell
 npm i schachtel
 ```
 
-```js
+```jsx
 import React from 'react'
 import {Grid, Row, Column} from 'schachtel'
 
@@ -43,7 +48,7 @@ const Layout = props => (
 )
 ```
 
-```js
+```jsx
 import React from 'react'
 import {Grid, Row, Column} from 'schachtel'
 
@@ -53,4 +58,21 @@ const Layout = props => (
     <Column handheld={12}> shortcut fullWidth </Column>
   </Grid>
 )
+```
+
+```jsx
+<Column handheld={4} tablet={6}>
+  <Row>Rows have no gutter </Row>
+  <Row>I am a subgrid with 4 columns. </Row>
+  <Row>On tablets and above I have 6 columns. </Row>
+  <Row>
+    <Column handheld={6}>
+      I am requesting 6 columns but will only get 4
+      until more are available.
+    </Column>
+    <Column handheld={12}>
+      If my parents allowed it, I would be 12 units wide.
+    </Column>
+  </Row>
+</Column>
 ```
