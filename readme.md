@@ -1,6 +1,6 @@
 # schachtel
 
-The shallow grid with ininite depth
+The shallow grid with infinite depth
 
 [Documentation](https://pixelass.github.io/schachtel/)
 
