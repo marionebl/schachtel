@@ -13,12 +13,12 @@
     "precommit": "npm test",
     "prepush": "npm test",
     "prerelease": "npm run transpile; npm test",
-    "pretest": "NODE_ENV=test npm run babel",
+    "pretest": "NODE_ENV=test",
     "posttest": "npm run lint",
     "release": "standard-version --no-verify",
     "server": "cd docs && http-server",
     "start": "npm run build && npm run server",
-    "test": "babel-node ./node_modules/istanbul/lib/cli.js cover _mocha -- ./lib/**/spec/*.js",
+    "test": "jest",
     "watch": "BABEL_ENV=development node ./scripts/watch"
   },
   "repository": {
@@ -55,12 +55,13 @@
     "hopsdoc": "^0.1.7",
     "http-server": "^0.9.0",
     "husky": "^0.11.8",
+    "istanbul": "git://github.com/pixelass/istanbul.git#v1",
+    "jest": "^15.1.1",
     "jsdoc": "^3.4.1",
     "jsdom": "^9.5.0",
     "livereactload": "^3.0.0",
     "log": "^1.4.0",
     "mocha": "^3.0.2",
-    "istanbul": "git://github.com/pixelass/istanbul.git#v1",
     "postcss-cssnext": "^2.8.0",
     "react-addons-test-utils": "^15.3.2",
     "standard-version": "^2.4.0",
@@ -81,13 +82,6 @@
       ]
     ]
   },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react",
-      "stage-0"
-    ]
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -97,5 +91,8 @@
     "classnames": "^2.2.5",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
+  },
+  "jest": {
+    "testRegex": ".*/src/.*/spec/.*\\.js$"
   }
 }

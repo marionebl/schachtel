@@ -3,21 +3,5 @@
     "es2015",
     "react",
     "stage-0"
-  ],
-  "env": {
-    "test": {
-      "plugins": [
-        [
-          "css-modules-transform",
-          {
-            "generateScopedName": "[local]",
-            "extensions": [
-              ".css"
-            ],
-            "extractCss": "lib/schachtel.css"
-          }
-        ]
-      ]
-    }
-  }
+  ]
 }

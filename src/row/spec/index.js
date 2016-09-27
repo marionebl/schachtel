@@ -1,7 +1,7 @@
-/* global describe it */
+/* global describe it expect */
 import React from 'react'
-import {shallow} from 'enzyme'
-import {expect} from 'chai'
+import {shallow, mount} from 'enzyme'
+// import {expect} from 'chai'
 
 import Row from '..'
 
@@ -12,12 +12,12 @@ describe('<Row />', () => {
         <div className='unique'/>
       </Row>
     )
-    expect(wrapper.contains(<div className='unique'/>)).to.equal(true)
+    expect(wrapper.contains(<div className='unique'/>)).toEqual(true)
   })
   it('allows us to extend the className', () => {
-    const wrapper = shallow(<Row className='custom'/>)
-    expect(wrapper.props().className).to.equal('custom schachtelRow')
+    const wrapper = mount(<Row className='custom'/>)
+    expect(wrapper.props().className).toEqual('custom')
     wrapper.setProps({ className: 'changed' })
-    expect(wrapper.props().className).to.equal('changed schachtelRow')
+    expect(wrapper.props().className).toEqual('changed')
   })
 })
