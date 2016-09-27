@@ -24,7 +24,7 @@ aside {
 main {
   background: #fff;
 }
-._src_row_style__schachtelRow {
+._src_grid_style__schachtelGrid {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -34,7 +34,7 @@ main {
       -ms-flex: 1 !important;
           flex: 1 !important;
 }
-._src_grid_style__schachtelGrid {
+._src_sub_grid_style__schachtelRow {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;

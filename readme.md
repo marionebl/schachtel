@@ -30,19 +30,19 @@ npm i schachtel
 
 ```jsx
 import React from 'react'
-import {Grid, Row, Column} from 'schachtel'
+import {Grid, SubGrid, Column} from 'schachtel'
 
 const Layout = props => (
   <Grid>
-    <Column> First Column </Column>
-    <Column> second Column </Column>
+    <Column el='section'> First Column </Column>
+    <Column el='aside'> second Column </Column>
     <Column>
-      <Row>
+      <SubGrid>
         No gutter
-      </Row>
-      <Row>
+      </SubGrid>
+      <SubGrid>
         <Column handheld={4} tablet={8}> Same grid as root level</Column>
-      </Row>
+      </SubGrid>
     </Column>
   </Grid>
 )
@@ -50,7 +50,7 @@ const Layout = props => (
 
 ```jsx
 import React from 'react'
-import {Grid, Row, Column} from 'schachtel'
+import {Grid, SubGrid, Column} from 'schachtel'
 
 const Layout = props => (
   <Grid>
@@ -62,10 +62,10 @@ const Layout = props => (
 
 ```jsx
 <Column handheld={4} tablet={6}>
-  <Row>Rows have no gutter </Row>
-  <Row>I am a subgrid with 4 columns. </Row>
-  <Row>On tablets and above I have 6 columns. </Row>
-  <Row>
+  <SubGrid>SubGrids have no gutter </SubGrid>
+  <SubGrid>I am a subgrid with 4 columns. </SubGrid>
+  <SubGrid>On tablets and above I have 6 columns. </SubGrid>
+  <SubGrid>
     <Column handheld={6}>
       I am requesting 6 columns but will only get 4
       until more are available.
@@ -73,6 +73,6 @@ const Layout = props => (
     <Column handheld={12}>
       If my parents allowed it, I would be 12 units wide.
     </Column>
-  </Row>
+  </SubGrid>
 </Column>
 ```

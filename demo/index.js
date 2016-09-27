@@ -3,17 +3,17 @@ import ReactDOM, {render} from 'react-dom' // eslint-disable-line no-unused-vars
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { github } from 'react-syntax-highlighter/dist/styles'
 
-import {Grid, Row, Column} from '../src'
+import {Grid, SubGrid, Column} from '../src'
 const app = document.getElementById('app')
 import './style.css'
 
 
 const codeExamples = [
   `<Column handheld={4} tablet={6}>
-  <Row>Rows have no gutter </Row>
-  <Row>I am a subgrid with 4 columns. </Row>
-  <Row>On tablets and above I have 6 columns. </Row>
-  <Row>
+  <SubGrid>SubGrids have no gutter </SubGrid>
+  <SubGrid>I am a subgrid with 4 columns. </SubGrid>
+  <SubGrid>On tablets and above I have 6 columns. </SubGrid>
+  <SubGrid>
     <Column handheld={6}>
       I am requesting 6 columns but will only get 4
       until more are available.
@@ -21,7 +21,7 @@ const codeExamples = [
     <Column handheld={12}>
       If my parents allowed it, I would be 12 units wide.
     </Column>
-  </Row>
+  </SubGrid>
 </Column>`
 ]
 
@@ -59,7 +59,7 @@ const App = () => (
           <br/>
           Everything is adjustable but don't expect the usual grid behaviour.
           <br/>
-          Rows define a subgrid, which is then split into the currently available columns.
+          SubGrids define a subgrid, which is then split into the currently available columns.
         </p>
         <h5>So instead of defining something like this</h5>
         <pre>
@@ -76,12 +76,12 @@ const App = () => (
 
         <h4>Example is rendered below</h4>
         <SyntaxHighlighter language='xml' style={github}>{codeExamples[0]}</SyntaxHighlighter>
-        <Row>
+        <SubGrid>
           <Column handheld={4} tablet={6}>
-            <Row>Rows have no gutter </Row>
-            <Row>I am a subgrid with 4 columns. </Row>
-            <Row>On tablets and above I have 6 columns. </Row>
-            <Row>
+            <SubGrid>SubGrids have no gutter </SubGrid>
+            <SubGrid>I am a subgrid with 4 columns. </SubGrid>
+            <SubGrid>On tablets and above I have 6 columns. </SubGrid>
+            <SubGrid>
               <Column handheld={6}>
                 I am requesting 6 columns but will only get 4
                 until more are available.
@@ -89,9 +89,9 @@ const App = () => (
               <Column handheld={12}>
                 If my parents allowed it, I would be 12 units wide.
               </Column>
-            </Row>
+            </SubGrid>
           </Column>
-        </Row>
+        </SubGrid>
       </Column>
       <Column handheld={8} desktop={4} el='aside'>
         <h3>Sidebar</h3>

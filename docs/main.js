@@ -26,10 +26,10 @@ function _interopRequireDefault(obj) {
 var app = document.getElementById('app'); // eslint-disable-line no-unused-vars
 
 
-var codeExamples = ['<Column handheld={4} tablet={6}>\n  <Row>Rows have no gutter </Row>\n  <Row>I am a subgrid with 4 columns. </Row>\n  <Row>On tablets and above I have 6 columns. </Row>\n  <Row>\n    <Column handheld={6}>\n      I am requesting 6 columns but will only get 4\n      until more are available.\n    </Column>\n    <Column handheld={12}>\n      If my parents allowed it, I would be 12 units wide.\n    </Column>\n  </Row>\n</Column>'];
+var codeExamples = ['<Column handheld={4} tablet={6}>\n  <SubGrid>SubGrids have no gutter </SubGrid>\n  <SubGrid>I am a subgrid with 4 columns. </SubGrid>\n  <SubGrid>On tablets and above I have 6 columns. </SubGrid>\n  <SubGrid>\n    <Column handheld={6}>\n      I am requesting 6 columns but will only get 4\n      until more are available.\n    </Column>\n    <Column handheld={12}>\n      If my parents allowed it, I would be 12 units wide.\n    </Column>\n  </SubGrid>\n</Column>'];
 
 var App = function App() {
-  return _react2.default.createElement('div', null, _react2.default.createElement(_src.Grid, { el: 'header' }, _react2.default.createElement(_src.Column, { el: 'h1', handheld: 4, tablet: 3 }, 'schachtel'), _react2.default.createElement(_src.Column, { handheld: 5, desktop: 9, el: 'h2' }, 'The shallow grid with infinite depth.')), _react2.default.createElement(_src.Grid, { el: 'main' }, _react2.default.createElement(_src.Column, { el: 'h1', handheld: 12 }, 'Why "schachtel"?'), _react2.default.createElement(_src.Column, { handheld: 8 }, 'I wanted a shallow grid. A grid that did not require me to live with endless and useless DOMnodes just make that layout work.', _react2.default.createElement('br', null), 'I have always used grids and written them myself because of different reasons. With schachtel I wanted to make a grid that does not care about the nesting. If you define a ', _react2.default.createElement('code', null, 'Column'), ' to be ', _react2.default.createElement('code', null, '2'), ' unit wide, it will always be ', _react2.default.createElement('code', null, '2'), ' unit wide. At different breakpoints the number of columns change (usually: 4-8-12).', _react2.default.createElement('br', null), _react2.default.createElement('h4', null, 'This mechanism is based on the oldschool 960-grid logic.'), '1 col = 80px.', _react2.default.createElement('br', null), '12 col = 960px.', _react2.default.createElement('br', null), _react2.default.createElement('h4', null, 'Therefore'), '4 col = 320px. (snap to next at 400)', _react2.default.createElement('br', null), '8 col = 640px. (snap to next at 720)', _react2.default.createElement('br', null), '12 col = 960px. (snap to full at 1040)', _react2.default.createElement('br', null), _react2.default.createElement('p', null, 'This grid uses ', _react2.default.createElement('code', null, 'flexbox'), ' and is fully fluid and responsive.', _react2.default.createElement('br', null), 'Everything is adjustable but don\'t expect the usual grid behaviour.', _react2.default.createElement('br', null), 'Rows define a subgrid, which is then split into the currently available columns.'), _react2.default.createElement('h5', null, 'So instead of defining something like this'), _react2.default.createElement('pre', null, '.col-6 // expect 50% of parent = 6', '\n', '  ', '.col-6 // expect 50% of parent = 3', '\n', '  ', '.col-6 // expect 50% of parent = 3', '\n'), _react2.default.createElement('h5', null, 'You should expect this model'), _react2.default.createElement('pre', null, '.col-6 // = 6', '\n', '  ', '.col-3 // = 3', '\n', '  ', '.col-3 // = 3', '\n'), _react2.default.createElement('h4', null, 'Example is rendered below'), _react2.default.createElement(_reactSyntaxHighlighter2.default, { language: 'xml', style: _styles.github }, codeExamples[0]), _react2.default.createElement(_src.Row, null, _react2.default.createElement(_src.Column, { handheld: 4, tablet: 6 }, _react2.default.createElement(_src.Row, null, 'Rows have no gutter '), _react2.default.createElement(_src.Row, null, 'I am a subgrid with 4 columns. '), _react2.default.createElement(_src.Row, null, 'On tablets and above I have 6 columns. '), _react2.default.createElement(_src.Row, null, _react2.default.createElement(_src.Column, { handheld: 6 }, 'I am requesting 6 columns but will only get 4 until more are available.'), _react2.default.createElement(_src.Column, { handheld: 12 }, 'If my parents allowed it, I would be 12 units wide.'))))), _react2.default.createElement(_src.Column, { handheld: 8, desktop: 4, el: 'aside' }, _react2.default.createElement('h3', null, 'Sidebar'))), _react2.default.createElement(_src.Grid, { el: 'footer' }, _react2.default.createElement(_src.Column, { handheld: 12, el: 'h3' }, 'Footer')));
+  return _react2.default.createElement('div', null, _react2.default.createElement(_src.Grid, { el: 'header' }, _react2.default.createElement(_src.Column, { el: 'h1', handheld: 4, tablet: 3 }, 'schachtel'), _react2.default.createElement(_src.Column, { handheld: 5, desktop: 9, el: 'h2' }, 'The shallow grid with infinite depth.')), _react2.default.createElement(_src.Grid, { el: 'main' }, _react2.default.createElement(_src.Column, { el: 'h1', handheld: 12 }, 'Why "schachtel"?'), _react2.default.createElement(_src.Column, { handheld: 8 }, 'I wanted a shallow grid. A grid that did not require me to live with endless and useless DOMnodes just make that layout work.', _react2.default.createElement('br', null), 'I have always used grids and written them myself because of different reasons. With schachtel I wanted to make a grid that does not care about the nesting. If you define a ', _react2.default.createElement('code', null, 'Column'), ' to be ', _react2.default.createElement('code', null, '2'), ' unit wide, it will always be ', _react2.default.createElement('code', null, '2'), ' unit wide. At different breakpoints the number of columns change (usually: 4-8-12).', _react2.default.createElement('br', null), _react2.default.createElement('h4', null, 'This mechanism is based on the oldschool 960-grid logic.'), '1 col = 80px.', _react2.default.createElement('br', null), '12 col = 960px.', _react2.default.createElement('br', null), _react2.default.createElement('h4', null, 'Therefore'), '4 col = 320px. (snap to next at 400)', _react2.default.createElement('br', null), '8 col = 640px. (snap to next at 720)', _react2.default.createElement('br', null), '12 col = 960px. (snap to full at 1040)', _react2.default.createElement('br', null), _react2.default.createElement('p', null, 'This grid uses ', _react2.default.createElement('code', null, 'flexbox'), ' and is fully fluid and responsive.', _react2.default.createElement('br', null), 'Everything is adjustable but don\'t expect the usual grid behaviour.', _react2.default.createElement('br', null), 'SubGrids define a subgrid, which is then split into the currently available columns.'), _react2.default.createElement('h5', null, 'So instead of defining something like this'), _react2.default.createElement('pre', null, '.col-6 // expect 50% of parent = 6', '\n', '  ', '.col-6 // expect 50% of parent = 3', '\n', '  ', '.col-6 // expect 50% of parent = 3', '\n'), _react2.default.createElement('h5', null, 'You should expect this model'), _react2.default.createElement('pre', null, '.col-6 // = 6', '\n', '  ', '.col-3 // = 3', '\n', '  ', '.col-3 // = 3', '\n'), _react2.default.createElement('h4', null, 'Example is rendered below'), _react2.default.createElement(_reactSyntaxHighlighter2.default, { language: 'xml', style: _styles.github }, codeExamples[0]), _react2.default.createElement(_src.SubGrid, null, _react2.default.createElement(_src.Column, { handheld: 4, tablet: 6 }, _react2.default.createElement(_src.SubGrid, null, 'SubGrids have no gutter '), _react2.default.createElement(_src.SubGrid, null, 'I am a subgrid with 4 columns. '), _react2.default.createElement(_src.SubGrid, null, 'On tablets and above I have 6 columns. '), _react2.default.createElement(_src.SubGrid, null, _react2.default.createElement(_src.Column, { handheld: 6 }, 'I am requesting 6 columns but will only get 4 until more are available.'), _react2.default.createElement(_src.Column, { handheld: 12 }, 'If my parents allowed it, I would be 12 units wide.'))))), _react2.default.createElement(_src.Column, { handheld: 8, desktop: 4, el: 'aside' }, _react2.default.createElement('h3', null, 'Sidebar'))), _react2.default.createElement(_src.Grid, { el: 'footer' }, _react2.default.createElement(_src.Column, { handheld: 12, el: 'h3' }, 'Footer')));
 };
 
 (0, _reactDom.render)(_react2.default.createElement(App, null), app);
@@ -46395,15 +46395,15 @@ module.exports = {"schachtelGrid":"_src_grid_style__schachtelGrid"}
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Column = exports.Row = exports.Grid = undefined;
+exports.Column = exports.SubGrid = exports.Grid = undefined;
 
 var _grid = require('./grid');
 
 var _grid2 = _interopRequireDefault(_grid);
 
-var _row = require('./row');
+var _subGrid = require('./sub-grid');
 
-var _row2 = _interopRequireDefault(_row);
+var _subGrid2 = _interopRequireDefault(_subGrid);
 
 var _column = require('./column');
 
@@ -46414,15 +46414,15 @@ function _interopRequireDefault(obj) {
 }
 
 exports.Grid = _grid2.default;
-exports.Row = _row2.default;
+exports.SubGrid = _subGrid2.default;
 exports.Column = _column2.default;
 exports.default = {
   Grid: _grid2.default,
-  Row: _row2.default,
+  SubGrid: _subGrid2.default,
   Column: _column2.default
 };
 
-},{"./column":424,"./grid":425,"./row":428}],428:[function(require,module,exports){
+},{"./column":424,"./grid":425,"./sub-grid":428}],428:[function(require,module,exports){
 'use strict';
 
 var _typeof2 = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
@@ -46481,46 +46481,46 @@ function _inherits(subClass, superClass) {
   }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
 }
 
-var Row = function (_Component) {
-  _inherits(Row, _Component);
+var SubGrid = function (_Component) {
+  _inherits(SubGrid, _Component);
 
-  function Row(props) {
-    _classCallCheck(this, Row);
+  function SubGrid(props) {
+    _classCallCheck(this, SubGrid);
 
     // eslint-disable-line no-useless-constructor
-    return _possibleConstructorReturn(this, (Row.__proto__ || Object.getPrototypeOf(Row)).call(this, props));
+    return _possibleConstructorReturn(this, (SubGrid.__proto__ || Object.getPrototypeOf(SubGrid)).call(this, props));
   }
 
-  _createClass(Row, [{
+  _createClass(SubGrid, [{
     key: 'render',
     value: function render() {
       var style = {
         margin: '0 ' + this.context.gutter * -1 + 'px'
       };
-      var classes = (0, _classnames2.default)(this.props.className, _style2.default.schachtelRow);
+      var classes = (0, _classnames2.default)(this.props.className, _style2.default.schachtelSubGrid);
       return _react2.default.createElement(this.props.el, { style: style, className: classes }, this.props.children);
     }
   }]);
 
-  return Row;
+  return SubGrid;
 }(_react.Component);
 
-Row.defaultProps = {
+SubGrid.defaultProps = {
   el: 'div'
 };
 
-Row.contextTypes = {
+SubGrid.contextTypes = {
   gutter: _react.PropTypes.number
 };
 
-Row.propTypes = {
+SubGrid.propTypes = {
   children: _react.PropTypes.node,
   className: _react.PropTypes.string,
   el: _react.PropTypes.string
 };
 
-exports.default = Row;
+exports.default = SubGrid;
 
 },{"./style.css":429,"classnames":3,"react":423}],429:[function(require,module,exports){
-module.exports = {"schachtelRow":"_src_row_style__schachtelRow"}
+module.exports = {"schachtelRow":"_src_sub_grid_style__schachtelRow"}
 },{}]},{},[1]);

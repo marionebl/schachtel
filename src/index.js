@@ -1,15 +1,15 @@
 import Grid from './grid'
-import Row from './row'
+import SubGrid from './sub-grid'
 import Column from './column'
 
 export {
   Grid,
-  Row,
+  SubGrid,
   Column
 }
 
 export default {
   Grid,
-  Row,
+  SubGrid,
   Column
 }

@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import styles from './style.css'
 
-class Row extends Component {
+class SubGrid extends Component {
   constructor (props) { // eslint-disable-line no-useless-constructor
     super(props)
   }
@@ -12,7 +12,7 @@ class Row extends Component {
     const style = {
       margin: `0 ${this.context.gutter * -1}px`
     }
-    const classes = classNames(this.props.className, styles.schachtelRow)
+    const classes = classNames(this.props.className, styles.schachtelSubGrid)
     return (
       <this.props.el style={style} className={classes}>
         {this.props.children}
@@ -21,18 +21,18 @@ class Row extends Component {
   }
 }
 
-Row.defaultProps = {
+SubGrid.defaultProps = {
   el: 'div'
 }
 
-Row.contextTypes = {
+SubGrid.contextTypes = {
   gutter: PropTypes.number
 }
 
-Row.propTypes = {
+SubGrid.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   el: PropTypes.string
 }
 
-export default Row
+export default SubGrid
