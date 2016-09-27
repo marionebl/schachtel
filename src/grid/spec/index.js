@@ -1,17 +1,15 @@
-/* global describe it expect */
+/* eslint-env jest */
 import React from 'react'
 import {shallow, mount} from 'enzyme'
-// import {expect} from 'chai'
-// import {jsdom} from 'jsdom'
+import sinon from 'sinon'
 
 import Grid from '..'
 
-// global.document = jsdom('<div></div>')
-// global.window = document.defaultView
-
 global.window.matchMedia = () => {
   return {
-    addListener () {},
+    addListener (cb) {
+      cb({matches: true})
+    },
     removeListener () {}
   }
 }
@@ -27,9 +25,9 @@ describe('<Grid />', () => {
   })
   it('allows us to extend the className', () => {
     const wrapper = shallow(<Grid className='custom'/>)
-    expect(wrapper.props().className).toEqual('custom schachtelGrid')
+    expect(wrapper.props().className).toEqual('custom')
     wrapper.setProps({ className: 'changed' })
-    expect(wrapper.props().className).toEqual('changed schachtelGrid')
+    expect(wrapper.props().className).toEqual('changed')
   })
   it('allows us to change the gutter', () => {
     const wrapper = mount(<Grid gutter={20}/>)
@@ -66,5 +64,20 @@ describe('<Grid />', () => {
     expect(wrapper.props().baseSize).toEqual(60)
     wrapper.setProps({ baseSize: 80 })
     expect(wrapper.props().baseSize).toEqual(80)
+  })
+  it('allows us to change the rendered element', () => {
+    const wrapper = mount(<Grid el='section'/>)
+    expect(wrapper.props().el).toEqual('section')
+  })
+  it('calls componentWillMount', () => {
+    sinon.spy(Grid.prototype, 'componentWillMount')
+    mount(<Grid />)
+    expect(Grid.prototype.componentWillMount.calledOnce).toEqual(true)
+  })
+  it('calls componentWillunmount', () => {
+    sinon.spy(Grid.prototype, 'componentWillUnmount')
+    const wrapper = mount(<Grid />)
+    wrapper.unmount()
+    expect(Grid.prototype.componentWillUnmount.calledOnce).toEqual(true)
   })
 })

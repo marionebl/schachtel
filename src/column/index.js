@@ -8,7 +8,7 @@ class Column extends Component {
     this.handleDesktop = this.handleDesktop.bind(this)
     this.handleFull = this.handleFull.bind(this)
     this.state = {
-      columns: 12
+      size: 0
     }
   }
 

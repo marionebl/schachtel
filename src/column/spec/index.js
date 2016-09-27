@@ -1,14 +1,10 @@
-/* global describe it expect */
+/* eslint-env jest */
 import React from 'react'
 import {shallow, mount} from 'enzyme'
-// import {expect} from 'chai'
-// import {jsdom} from 'jsdom'
+import sinon from 'sinon'
 
 import Grid from '../../grid'
 import Column from '..'
-
-// global.document = jsdom('<div></div>')
-// global.window = document.defaultView
 
 global.window.matchMedia = () => {
   return {
@@ -58,6 +54,10 @@ describe('<Column />', () => {
     wrapper.setProps({ full: 13 })
     expect(wrapper.props().full).toEqual(13)
   })
+  it('allows us to change the rendered element', () => {
+    const wrapper = mount(<Column el='section'/>)
+    expect(wrapper.props().el).toEqual('section')
+  })
   it('inherits context', () => {
     const wrapper = mount(
       <Grid desktopCols={6}>
@@ -67,5 +67,16 @@ describe('<Column />', () => {
     expect(wrapper.find(Column).node.context.desktopCols).toEqual(6)
     wrapper.setProps({ desktopCols: 4 })
     expect(wrapper.find(Column).node.context.desktopCols).toEqual(4)
+  })
+  it('calls componentWillMount', () => {
+    sinon.spy(Column.prototype, 'componentWillMount')
+    mount(<Column />)
+    expect(Column.prototype.componentWillMount.calledOnce).toEqual(true)
+  })
+  it('calls componentWillunmount', () => {
+    sinon.spy(Column.prototype, 'componentWillUnmount')
+    const wrapper = mount(<Column />)
+    wrapper.unmount()
+    expect(Column.prototype.componentWillUnmount.calledOnce).toEqual(true)
   })
 })
