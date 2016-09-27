@@ -1,6 +1,6 @@
 {
   "name": "schachtel",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "prebuild": "npm run babel",
     "precommit": "npm test",
     "prepush": "npm test",
-    "prerelease": "npm run transpile; npm test",
+    "prerelease": "npm run babel; npm test",
     "posttest": "npm run lint",
     "release": "standard-version --no-verify",
     "server": "cd docs && http-server",
