@@ -16,10 +16,41 @@ The shallow grid with ininite depth
 [![GitHub license](https://img.shields.io/github/license/pixelass/schachtel.svg)](https://github.com/pixelass/schachtel/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/pixelass/schachtel.svg)](https://github.com/pixelass/schachtel/issues)
 [![GitHub forks](https://img.shields.io/github/forks/pixelass/schachtel.svg)](https://github.com/pixelass/schachtel/network)
-[![GitHub stars](https://img.shields.io/github/stars/pixelass/schachtel.svg)](https://github.com/pixelass/schachtel/stargazers)  
-
+[![GitHub stars](https://img.shields.io/github/stars/pixelass/schachtel.svg)](https://github.com/pixelass/schachtel/stargazers)
 
 
 ```shell
 npm i schachtel
+```
+
+```js
+import React from 'react'
+import {Grid, Row, Column} from 'schachtel'
+
+const Layout = props => (
+  <Grid>
+    <Column> First Column </Column>
+    <Column> second Column </Column>
+    <Column>
+      <Row>
+        No gutter
+      </Row>
+      <Row>
+        <Column handheld={4} tablet={8}> Same grid as root level</Column>
+      </Row>
+    </Column>
+  </Grid>
+)
+```
+
+```js
+import React from 'react'
+import {Grid, Row, Column} from 'schachtel'
+
+const Layout = props => (
+  <Grid>
+    <Column handheld={4} tablet={8} desktop={12}> Always span fullWidth</Column>
+    <Column handheld={12}> shortcut fullWidth </Column>
+  </Grid>
+)
 ```
